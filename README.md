@@ -1,4 +1,4 @@
-here’s a fully documented professional README.md for your project CareBridge (the hospital connection system).
+here’s a fully documented professional README.md for CareBridge (the hospital connection system).
 
 ```markdown
 🏥 CareBridge – Global Hospital Connectivity Platform
