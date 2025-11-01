@@ -8,7 +8,7 @@ const { Encounter } = require("../HospitalA/models/Encounter");
 const { Nurse } = require("../HospitalA/models/Nurse");
 
 const uri = process.env.MONGO_URI_HOSPITAL_A;
-console.log("Connecting to:", uri); // ✅ Step 3 check
+console.log("Connecting to:", uri); //Step 3 check
 */
 require('dotenv').config({ path: '../.env' });
 const mongoose = require("mongoose");
@@ -22,7 +22,7 @@ const uri = process.env.MONGO_URI_HOSPITAL_A;
 async function populateHospitalA() {
   try {
     await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log("✅ Connected to Hospital A database");
+    console.log("Connected to Hospital A database");
 
     // Clear old data
     await Promise.all([
@@ -110,12 +110,12 @@ const nurses = await Nurse.insertMany([
       },
     ]);
 
-    console.log("✅ Hospital A data populated successfully!");
+    console.log("Hospital A data populated successfully!");
   } catch (err) {
-    console.error("❌ Error populating Hospital A:", err);
+    console.error("Error populating Hospital A:", err);
   } finally {
     await mongoose.disconnect();
-    console.log("🔌 Disconnected from Hospital A DB");
+    console.log("Disconnected from Hospital A DB");
   }
 }
 
