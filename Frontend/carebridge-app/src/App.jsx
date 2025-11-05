@@ -1,14 +1,18 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import React from "react";
+import { Routes, Route } from "react-router";
+import { SignIn, SignUp, SignedIn, SignedOut, UserButton } from "@clerk/react-router";
 
-export default function App() {
+function App() {
   return (
     <header>
-      <SignedOut>
-        <SignInButton />
+      < SignedOut>
+        <SignedInButton />
       </SignedOut>
-      <SignedIn>
+      < SignedIn>
         <UserButton />
       </SignedIn>
     </header>
   );
 }
+
+export default App;

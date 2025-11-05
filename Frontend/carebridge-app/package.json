@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.53.4",
+    "@clerk/react-router": "^2.1.6",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router": "^7.9.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
