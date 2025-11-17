@@ -1,0 +1,61 @@
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:13:52"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:14:17"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:14:24"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:14:30"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:14:40"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"Found 2 hospital configurations","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"🏥 Connected hospitals: 2","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-17 10:14:48"}
+{"level":"info","message":"SIGINT received. Closing server gracefully...","timestamp":"2025-11-17 10:31:01"}
