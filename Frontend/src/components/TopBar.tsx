@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { useState } from "react";
+import { useUser, SignOutButton } from '@clerk/clerk-react';
 
 const hospitals = [
   { id: "HOSP_A_001", name: "City General Hospital" },
@@ -19,6 +20,7 @@ const hospitals = [
 
 export const TopBar = () => {
   const [selectedHospital, setSelectedHospital] = useState(hospitals[0]);
+  const { user } = useUser();
 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border bg-card px-6 shadow-sm">
@@ -68,9 +70,9 @@ export const TopBar = () => {
         <DropdownMenuContent align="end" className="w-56 bg-popover">
           <DropdownMenuLabel>
             <div className="flex flex-col">
-              <span>Dr. Sarah Johnson</span>
+              <span>{user?.firstName} {user?.lastName}</span>
               <span className="text-xs font-normal text-muted-foreground">
-                Administrator
+                User
               </span>
             </div>
           </DropdownMenuLabel>
@@ -78,7 +80,9 @@ export const TopBar = () => {
           <DropdownMenuItem>Profile</DropdownMenuItem>
           <DropdownMenuItem>Settings</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-destructive">Logout</DropdownMenuItem>
+          <SignOutButton redirectUrl="/">
+            <DropdownMenuItem className="text-destructive">Logout</DropdownMenuItem>
+          </SignOutButton>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>
