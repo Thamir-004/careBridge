@@ -56,7 +56,9 @@ const validateDoctor = (data) => {
   }
 
   // Validate phone number format (Kenyan)
-  if (data.phone_number && !/^(\+254|0)[17]\d{8}$/.test(data.phone_number.replace(/\s+/g, ''))) {
+  const cleanedPhone = data.phone_number.replace(/\s+/g, '');
+  console.log('Validating phone:', data.phone_number, 'Cleaned:', cleanedPhone, 'Regex test:', /^(\+?254|0)[17]\d{8}$/.test(cleanedPhone));
+  if (data.phone_number && !/^(\+?254|0)[17]\d{8}$/.test(cleanedPhone)) {
     errors.push('Invalid phone number format');
   }
 

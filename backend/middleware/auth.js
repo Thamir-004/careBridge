@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken');
+const { verifyToken } = require('@clerk/clerk-sdk-node');
 const logger = require('../utils/logger');
 
 /**
- * Verify JWT token
+ * Verify JWT token (supports both Clerk and legacy JWT)
  */
-const authenticateToken = (req, res, next) => {
+const authenticateToken = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
@@ -16,17 +17,31 @@ const authenticateToken = (req, res, next) => {
       });
     }
 
-    jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
-      if (err) {
-        return res.status(403).json({
-          success: false,
-          message: 'Invalid or expired token',
-        });
-      }
+    // Try Clerk token first
+    try {
+      const payload = await verifyToken(token, {
+        secretKey: process.env.CLERK_SECRET_KEY,
+      });
+      req.user = {
+        id: payload.sub,
+        email: payload.email,
+        roles: payload.roles || ['user'],
+      };
+      return next();
+    } catch (clerkError) {
+      // If Clerk fails, try legacy JWT
+      jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
+        if (err) {
+          return res.status(403).json({
+            success: false,
+            message: 'Invalid or expired token',
+          });
+        }
 
-      req.user = user;
-      next();
-    });
+        req.user = user;
+        next();
+      });
+    }
   } catch (error) {
     logger.error('Authentication error:', error);
     res.status(500).json({
@@ -39,17 +54,30 @@ const authenticateToken = (req, res, next) => {
 /**
  * Optional authentication (allow both authenticated and unauthenticated)
  */
-const optionalAuth = (req, res, next) => {
+const optionalAuth = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
     if (token) {
-      jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
-        if (!err) {
-          req.user = user;
-        }
-      });
+      try {
+        // Try Clerk token first
+        const payload = await verifyToken(token, {
+          secretKey: process.env.CLERK_SECRET_KEY,
+        });
+        req.user = {
+          id: payload.sub,
+          email: payload.email,
+          roles: payload.roles || ['user'],
+        };
+      } catch (clerkError) {
+        // Try legacy JWT
+        jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
+          if (!err) {
+            req.user = user;
+          }
+        });
+      }
     }
 
     next();

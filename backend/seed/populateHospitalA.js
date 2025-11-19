@@ -2,25 +2,53 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 // Import model factory functions
-const getPatientModel = require('../integrations/HospitalA/models/Patient');
-const getDoctorModel = require('../integrations/HospitalA/models/Doctor');
-const getNurseModel = require('../integrations/HospitalA/models/Nurse');
-const getEncounterModel = require('../integrations/HospitalA/models/Encounter');
-const getMedicationModel = require('../integrations/HospitalA/models/Medication');
+const getPatientModel = require('../hospitals/HospitalA/models/Patient');
+const getDoctorModel = require('../hospitals/HospitalA/models/Doctor');
+const getNurseModel = require('../hospitals/HospitalA/models/Nurse');
+const getEncounterModel = require('../hospitals/HospitalA/models/Encounter');
+const getMedicationModel = require('../hospitals/HospitalA/models/Medication');
 
 const HOSPITAL_A_URI = process.env.HOSPITAL_A_MONGO_URI || 'mongodb://localhost:27017/hospital_a';
 const HOSPITAL_A_ID = process.env.HOSPITAL_A_ID || 'HOSP_A_001';
 const HOSPITAL_A_NAME = process.env.HOSPITAL_A_NAME || 'City General Hospital';
 
+// Utility functions for generating realistic data
+function randomChoice(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+function generatePhoneNumber() {
+  const prefixes = ['0700', '0701', '0702', '0703', '0704', '0705', '0706', '0707', '0708', '0709', '0710', '0711', '0712', '0713', '0714', '0715', '0716', '0717', '0718', '0719', '0720', '0721', '0722', '0723', '0724', '0725', '0726', '0727', '0728', '0729', '0730', '0731', '0732', '0733', '0734', '0735', '0736', '0737', '0738', '0739'];
+  const prefix = randomChoice(prefixes);
+  const number = Math.floor(Math.random() * 10000000).toString().padStart(7, '0');
+  return `${prefix}${number}`;
+}
+
+function generateKenyanName(gender) {
+  const maleFirstNames = ['John', 'James', 'Peter', 'Paul', 'Michael', 'David', 'Joseph', 'Daniel', 'Samuel', 'Simon', 'Thomas', 'Andrew', 'Robert', 'William', 'Richard', 'Charles', 'Anthony', 'Edward', 'Francis', 'George', 'Henry', 'Isaac', 'Jacob', 'Kenneth', 'Lawrence', 'Martin', 'Nicholas', 'Oliver', 'Patrick', 'Quincy', 'Raymond', 'Stephen', 'Timothy', 'Victor', 'Walter'];
+  const femaleFirstNames = ['Mary', 'Sarah', 'Elizabeth', 'Margaret', 'Susan', 'Jennifer', 'Dorothy', 'Barbara', 'Patricia', 'Linda', 'Karen', 'Lisa', 'Nancy', 'Betty', 'Helen', 'Sandra', 'Donna', 'Carol', 'Ruth', 'Sharon', 'Michelle', 'Laura', 'Kimberly', 'Deborah', 'Pamela', 'Cynthia', 'Sandra', 'Deborah', 'Donna', 'Carol'];
+  const lastNames = ['Oduya', 'Wanjiku', 'Kiprop', 'Cheruiyot', 'Koech', 'Rono', 'Langat', 'Kiprotich', 'Chepkirui', 'Jeptoo', 'Mutai', 'Kemboi', 'Biwott', 'Koskei', 'Tanui', 'Kipruto', 'Kirui', 'Sang', 'Yego', 'Kipkemoi', 'Ngetich', 'Rutto', 'Kipkoech', 'Cherop', 'Kipngeno', 'Sigei', 'Kiprop', 'Kipkorir', 'Kipchumba', 'Kipngetich'];
+
+  const firstNames = gender === 'Male' ? maleFirstNames : femaleFirstNames;
+  return {
+    firstName: randomChoice(firstNames),
+    lastName: randomChoice(lastNames)
+  };
+}
+
 async function populateHospitalA() {
   let connection;
-  
+
   try {
-    console.log(' Connecting to Hospital A database...');
+    console.log('Connecting to Hospital A database...');
     connection = await mongoose.createConnection(HOSPITAL_A_URI, {
       maxPoolSize: 10,
     });
-    console.log(' Connected to Hospital A database');
+    console.log('Connected to Hospital A database');
 
     // Get models using the connection
     const Patient = getPatientModel(connection);
@@ -30,7 +58,7 @@ async function populateHospitalA() {
     const Medication = getMedicationModel(connection);
 
     // Clear existing data
-    console.log('  Clearing existing data...');
+    console.log('Clearing existing data...');
     await Promise.all([
       Patient.deleteMany({}),
       Doctor.deleteMany({}),
@@ -38,336 +66,296 @@ async function populateHospitalA() {
       Encounter.deleteMany({}),
       Medication.deleteMany({}),
     ]);
-    console.log(' Existing data cleared');
+    console.log('Existing data cleared');
 
-    // Seed Doctors
-    console.log(' Seeding doctors...');
-    const doctors = await Doctor.insertMany([
-      {
-        doctor_id: 'DOC-A-001',
-        license_number: 'KE-MED-12345',
-        first_name: 'Amina',
-        last_name: 'Omar',
-        specialty: 'Cardiology',
-        phone_number: '0700111222',
-        email: 'amina.omar@citygeneralhospital.com',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        department: 'Cardiology',
-        availability_status: 'Available',
-        status: 'Active',
-      },
-      {
-        doctor_id: 'DOC-A-002',
-        license_number: 'KE-MED-67890',
-        first_name: 'Peter',
-        last_name: 'Mwangi',
-        specialty: 'Pediatrics',
-        phone_number: '0700333444',
-        email: 'peter.mwangi@citygeneralhospital.com',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        department: 'Pediatrics',
-        availability_status: 'Available',
-        status: 'Active',
-      },
-      {
-        doctor_id: 'DOC-A-003',
-        license_number: 'KE-MED-11122',
-        first_name: 'Grace',
-        last_name: 'Wanjiku',
-        specialty: 'General Practice',
-        phone_number: '0700555666',
-        email: 'grace.wanjiku@citygeneralhospital.com',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        department: 'General Medicine',
-        availability_status: 'Available',
-        status: 'Active',
-      },
-    ]);
-    console.log(` ${doctors.length} doctors seeded`);
+    // Generate Doctors (15 doctors with various specialties)
+    console.log('Generating doctors...');
+    const specialties = ['Cardiology', 'Pediatrics', 'General Practice', 'Orthopedics', 'Dermatology', 'Neurology', 'Psychiatry', 'Ophthalmology', 'ENT', 'Gynecology', 'Urology', 'Radiology', 'Emergency Medicine', 'Internal Medicine', 'Surgery'];
+    const departments = ['Cardiology', 'Pediatrics', 'General Medicine', 'Orthopedics', 'Dermatology', 'Neurology', 'Psychiatry', 'Ophthalmology', 'ENT', 'Gynecology', 'Urology', 'Radiology', 'Emergency', 'Internal Medicine', 'Surgery'];
 
-    // Seed Nurses
-    console.log(' Seeding nurses...');
-    const nurses = await Nurse.insertMany([
-      {
-        nurse_id: 'NUR-A-001',
-        license_number: 'KE-NUR-11111',
-        first_name: 'Wanjiku',
-        last_name: 'Kariuki',
-        phone_number: '0711222333',
-        email: 'wanjiku.kariuki@citygeneralhospital.com',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        department: 'Cardiology',
-        shift: 'Morning',
-        availability_status: 'Available',
-        status: 'Active',
-      },
-      {
-        nurse_id: 'NUR-A-002',
-        license_number: 'KE-NUR-22222',
-        first_name: 'Otieno',
-        last_name: 'Odhiambo',
-        phone_number: '0722333444',
-        email: 'otieno.odhiambo@citygeneralhospital.com',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        department: 'Pediatrics',
-        shift: 'Evening',
-        availability_status: 'Available',
-        status: 'Active',
-      },
-    ]);
-    console.log(` ${nurses.length} nurses seeded`);
+    const doctors = [];
+    const usedDoctorEmails = new Set();
 
-    // Seed Patients
-    console.log(' Seeding patients...');
-    const patients = await Patient.insertMany([
-      {
-        patient_id: 'PAT-A-001',
-        national_id: '12345678',
-        first_name: 'John',
-        last_name: 'Doe',
-        date_of_birth: new Date('1990-05-12'),
-        gender: 'Male',
-        phone_number: '0712345678',
-        email: 'john.doe@email.com',
+    for (let i = 1; i <= 15; i++) {
+      const gender = randomChoice(['Male', 'Female']);
+      const names = generateKenyanName(gender);
+      const specialty = specialties[(i - 1) % specialties.length];
+      const department = departments[(i - 1) % departments.length];
+
+      // Ensure unique email
+      let email = `${names.firstName.toLowerCase()}.${names.lastName.toLowerCase()}@citygeneralhospital.com`;
+      let counter = 1;
+      while (usedDoctorEmails.has(email)) {
+        email = `${names.firstName.toLowerCase()}.${names.lastName.toLowerCase()}${counter}@citygeneralhospital.com`;
+        counter++;
+      }
+      usedDoctorEmails.add(email);
+
+      doctors.push({
+        doctor_id: `DOC-A-${String(i).padStart(3, '0')}`,
+        license_number: `KE-MED-${String(10000 + i).padStart(5, '0')}`,
+        first_name: names.firstName,
+        last_name: names.lastName,
+        specialty: specialty,
+        phone_number: generatePhoneNumber(),
+        email: email,
+        hospital_id: HOSPITAL_A_ID,
+        hospital_name: HOSPITAL_A_NAME,
+        department: department,
+        availability_status: randomChoice(['Available', 'Available', 'Available', 'On Leave']), // Mostly available
+        status: 'Active',
+      });
+    }
+
+    const insertedDoctors = await Doctor.insertMany(doctors);
+    console.log(`${insertedDoctors.length} doctors seeded`);
+
+    // Generate Nurses (10 nurses)
+    console.log('Generating nurses...');
+    const nurses = [];
+    for (let i = 1; i <= 10; i++) {
+      const gender = randomChoice(['Male', 'Female']);
+      const names = generateKenyanName(gender);
+      const department = randomChoice(departments);
+
+      nurses.push({
+        nurse_id: `NUR-A-${String(i).padStart(3, '0')}`,
+        license_number: `KE-NUR-${String(20000 + i).padStart(5, '0')}`,
+        first_name: names.firstName,
+        last_name: names.lastName,
+        phone_number: generatePhoneNumber(),
+        email: `${names.firstName.toLowerCase()}.${names.lastName.toLowerCase()}@citygeneralhospital.com`,
+        hospital_id: HOSPITAL_A_ID,
+        hospital_name: HOSPITAL_A_NAME,
+        department: department,
+        shift: randomChoice(['Morning', 'Evening', 'Night']),
+        availability_status: randomChoice(['Available', 'Available', 'Available', 'Busy']),
+        status: 'Active',
+      });
+    }
+
+    const insertedNurses = await Nurse.insertMany(nurses);
+    console.log(`${insertedNurses.length} nurses seeded`);
+
+    // Generate Patients (200 patients with diverse demographics)
+    console.log('Generating patients...');
+    const bloodTypes = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+    const cities = ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret', 'Thika', 'Kitale', 'Malindi', 'Garissa', 'Kakamega'];
+    const streets = ['Koinange Street', 'Luthuli Avenue', 'Tom Mboya Street', 'Moi Avenue', 'River Road', 'Westlands Road', 'Ngong Road', 'Mombasa Road', 'Jogoo Road', 'Outering Road'];
+
+    const patients = [];
+    const usedEmails = new Set();
+
+    for (let i = 1; i <= 200; i++) {
+      const gender = randomChoice(['Male', 'Female']);
+      const names = generateKenyanName(gender);
+      const age = Math.floor(Math.random() * 80) + 1; // 1-80 years old
+      const birthYear = new Date().getFullYear() - age;
+      const bloodType = randomChoice(bloodTypes);
+      const city = randomChoice(cities);
+      const street = randomChoice(streets);
+
+      // Ensure unique email
+      let email = `${names.firstName.toLowerCase()}.${names.lastName.toLowerCase()}@email.com`;
+      let counter = 1;
+      while (usedEmails.has(email)) {
+        email = `${names.firstName.toLowerCase()}.${names.lastName.toLowerCase()}${counter}@email.com`;
+        counter++;
+      }
+      usedEmails.add(email);
+
+      patients.push({
+        patient_id: `PAT-A-${String(i).padStart(3, '0')}`,
+        national_id: `NID${String(i).padStart(6, '0')}`,
+        first_name: names.firstName,
+        last_name: names.lastName,
+        date_of_birth: new Date(birthYear, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1),
+        gender: gender,
+        phone_number: generatePhoneNumber(),
+        email: email,
         address: {
-          street: '123 Kenyatta Avenue',
-          city: 'Nairobi',
-          state: 'Nairobi County',
-          zip_code: '00100',
+          street: `${Math.floor(Math.random() * 999) + 1} ${street}`,
+          city: city,
+          state: `${city} County`,
+          zip_code: String(Math.floor(Math.random() * 90000) + 10000),
           country: 'Kenya',
         },
-        blood_type: 'O+',
+        blood_type: bloodType,
         hospital_id: HOSPITAL_A_ID,
         hospital_name: HOSPITAL_A_NAME,
         status: 'Active',
-      },
-      {
-        patient_id: 'PAT-A-002',
-        national_id: '87654321',
-        first_name: 'Mary',
-        last_name: 'Atieno',
-        date_of_birth: new Date('1985-09-23'),
-        gender: 'Female',
-        phone_number: '0723456789',
-        email: 'mary.atieno@email.com',
-        address: {
-          street: '456 Moi Avenue',
-          city: 'Mombasa',
-          state: 'Mombasa County',
-          zip_code: '80100',
-          country: 'Kenya',
+        sync_metadata: {
+          original_hospital: HOSPITAL_A_ID,
         },
-        blood_type: 'A+',
-        allergies: [
-          { allergen: 'Penicillin', severity: 'Severe' },
-        ],
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        status: 'Active',
-      },
-      {
-        patient_id: 'PAT-A-003',
-        national_id: '11223344',
-        first_name: 'David',
-        last_name: 'Kamau',
-        date_of_birth: new Date('2010-03-15'),
-        gender: 'Male',
-        phone_number: '0734567890',
-        email: 'david.kamau@email.com',
-        address: {
-          street: '789 Uhuru Highway',
-          city: 'Nairobi',
-          state: 'Nairobi County',
-          zip_code: '00200',
-          country: 'Kenya',
-        },
-        blood_type: 'B+',
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        status: 'Active',
-      },
-    ]);
-    console.log(` ${patients.length} patients seeded`);
+      });
+    }
 
-    // Seed Encounters
-    console.log(' Seeding encounters...');
-    const encounters = await Encounter.insertMany([
-      {
-        patient: {
-          patient_id: patients[0].patient_id,
-          patient_ref: patients[0]._id,
-          patient_name: patients[0].full_name,
-        },
-        doctor: {
-          doctor_id: doctors[0].doctor_id,
-          doctor_ref: doctors[0]._id,
-          doctor_name: doctors[0].full_name,
-        },
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        encounter_type: 'Outpatient',
-        encounter_date: new Date('2025-01-15'),
-        reason_for_visit: 'Chest pain and shortness of breath',
-        symptoms: ['Chest pain', 'Shortness of breath', 'Dizziness'],
-        vital_signs: {
-          temperature: 37.2,
-          blood_pressure: '140/90',
-          heart_rate: 88,
-          weight: 75,
-          height: 175,
-        },
-        diagnoses: [
-          { description: 'Mild arrhythmia', type: 'Primary' },
-        ],
-        treatment_plan: 'Prescribed beta-blockers, advised lifestyle changes',
-        clinical_notes: 'Patient reports intermittent chest pain for 2 weeks',
-        encounter_status: 'Completed',
-        status: 'Completed',
-      },
-      {
-        patient: {
-          patient_id: patients[1].patient_id,
-          patient_ref: patients[1]._id,
-          patient_name: patients[1].full_name,
-        },
-        doctor: {
-          doctor_id: doctors[1].doctor_id,
-          doctor_ref: doctors[1]._id,
-          doctor_name: doctors[1].full_name,
-        },
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        encounter_type: 'Emergency',
-        encounter_date: new Date('2025-02-20'),
-        reason_for_visit: 'High fever and body aches',
-        symptoms: ['High fever', 'Body aches', 'Headache', 'Fatigue'],
-        vital_signs: {
-          temperature: 39.5,
-          blood_pressure: '120/80',
-          heart_rate: 95,
-          weight: 62,
-          height: 165,
-        },
-        diagnoses: [
-          { description: 'Malaria', type: 'Primary' },
-        ],
-        treatment_plan: 'Antimalarial medication, rest and hydration',
-        clinical_notes: 'Positive malaria rapid diagnostic test',
-        lab_tests_ordered: [
-          { test_name: 'Malaria RDT', status: 'Completed', results: 'Positive' },
-        ],
-        encounter_status: 'Completed',
-        status: 'Completed',
-      },
-      {
-        patient: {
-          patient_id: patients[2].patient_id,
-          patient_ref: patients[2]._id,
-          patient_name: patients[2].full_name,
-        },
-        doctor: {
-          doctor_id: doctors[1].doctor_id,
-          doctor_ref: doctors[1]._id,
-          doctor_name: doctors[1].full_name,
-        },
-        hospital_id: HOSPITAL_A_ID,
-        hospital_name: HOSPITAL_A_NAME,
-        encounter_type: 'Follow-up',
-        encounter_date: new Date('2025-03-01'),
-        reason_for_visit: 'Routine vaccination',
-        symptoms: [],
-        vital_signs: {
-          temperature: 36.8,
-          weight: 35,
-          height: 140,
-        },
-        diagnoses: [
-          { description: 'Routine immunization', type: 'Primary' },
-        ],
-        treatment_plan: 'MMR vaccine administered',
-        clinical_notes: 'No adverse reactions observed',
-        encounter_status: 'Completed',
-        status: 'Completed',
-      },
-    ]);
-    console.log(` ${encounters.length} encounters seeded`);
+    const insertedPatients = await Patient.insertMany(patients);
+    console.log(`${insertedPatients.length} patients seeded`);
 
-    // Seed Medications
-    console.log(' Seeding medications...');
-    const medications = await Medication.insertMany([
-      {
+    // Generate Encounters (600 encounters spanning 6 months)
+    console.log('Generating encounters...');
+    const encounterTypes = ['Outpatient', 'Inpatient', 'Emergency', 'Follow-up', 'Consultation'];
+    const symptoms = [
+      'Fever', 'Headache', 'Cough', 'Chest pain', 'Abdominal pain', 'Back pain', 'Joint pain',
+      'Shortness of breath', 'Nausea', 'Vomiting', 'Diarrhea', 'Fatigue', 'Dizziness',
+      'Sore throat', 'Runny nose', 'Skin rash', 'High blood pressure', 'Diabetes symptoms'
+    ];
+    const diagnoses = [
+      'Common cold', 'Hypertension', 'Diabetes mellitus', 'Pneumonia', 'Gastritis', 'Arthritis',
+      'Bronchitis', 'Migraine', 'Anemia', 'Thyroid disorder', 'Allergic reaction', 'Injury',
+      'Infection', 'Heart condition', 'Respiratory infection', 'Digestive disorder', 'Mental health issue'
+    ];
+    const reasons = [
+      'Routine checkup', 'Fever and body aches', 'Chest pain', 'Abdominal pain', 'Headache',
+      'Cough and cold', 'High blood pressure', 'Diabetes management', 'Injury treatment',
+      'Follow-up visit', 'Vaccination', 'Pregnancy check', 'Mental health consultation'
+    ];
+
+    const encounters = [];
+    const startDate = new Date('2024-06-01'); // 6 months ago
+    const endDate = new Date(); // Today
+    let encounterCounter = 1;
+
+    for (let i = 1; i <= 600; i++) {
+      const patient = insertedPatients[Math.floor(Math.random() * insertedPatients.length)];
+      const doctor = insertedDoctors[Math.floor(Math.random() * insertedDoctors.length)];
+      const encounterType = randomChoice(encounterTypes);
+      const encounterDate = randomDate(startDate, endDate);
+      const reason = randomChoice(reasons);
+      const selectedSymptoms = symptoms.sort(() => 0.5 - Math.random()).slice(0, Math.floor(Math.random() * 4) + 1);
+      const diagnosis = randomChoice(diagnoses);
+
+      // Generate vital signs based on age and condition
+      const temperature = 36.1 + Math.random() * 3; // 36.1-39.1°C
+      const systolic = 90 + Math.floor(Math.random() * 60); // 90-150
+      const diastolic = 60 + Math.floor(Math.random() * 40); // 60-100
+      const heartRate = 60 + Math.floor(Math.random() * 60); // 60-120
+      const weight = patient.date_of_birth && (new Date().getFullYear() - patient.date_of_birth.getFullYear()) > 18
+        ? 50 + Math.random() * 50 // Adults: 50-100kg
+        : 5 + Math.random() * 35; // Children: 5-40kg
+      const height = patient.date_of_birth && (new Date().getFullYear() - patient.date_of_birth.getFullYear()) > 18
+        ? 150 + Math.random() * 40 // Adults: 150-190cm
+        : 50 + Math.random() * 100; // Children: 50-150cm
+
+      // Generate unique encounter_id using counter
+      const encounterId = `ENC-A-${String(encounterCounter).padStart(6, '0')}`;
+      encounterCounter++;
+
+      encounters.push({
+        encounter_id: encounterId,
+        patient: {
+          patient_id: patient.patient_id,
+          patient_ref: patient._id,
+          patient_name: `${patient.first_name} ${patient.last_name}`,
+        },
+        doctor: {
+          doctor_id: doctor.doctor_id,
+          doctor_ref: doctor._id,
+          doctor_name: `Dr. ${doctor.first_name} ${doctor.last_name}`,
+        },
+        hospital_id: HOSPITAL_A_ID,
+        hospital_name: HOSPITAL_A_NAME,
+        encounter_type: encounterType,
+        encounter_date: encounterDate,
+        reason_for_visit: reason,
+        symptoms: selectedSymptoms,
+        vital_signs: {
+          temperature: Math.round(temperature * 10) / 10,
+          blood_pressure: `${systolic}/${diastolic}`,
+          heart_rate: heartRate,
+          weight: Math.round(weight * 10) / 10,
+          height: Math.round(height),
+        },
+        diagnoses: [{
+          description: diagnosis,
+          type: 'Primary'
+        }],
+        treatment_plan: `Treatment for ${diagnosis.toLowerCase()}`,
+        clinical_notes: `Patient presented with ${selectedSymptoms.join(', ').toLowerCase()}. Diagnosis: ${diagnosis}.`,
+        encounter_status: 'Completed',
+        status: 'Completed',
+      });
+    }
+
+    const insertedEncounters = await Encounter.insertMany(encounters);
+    console.log(`${insertedEncounters.length} encounters seeded`);
+
+    // Generate Medications (400 medications linked to encounters)
+    console.log('Generating medications...');
+    const medicationNames = [
+      'Paracetamol', 'Ibuprofen', 'Amoxicillin', 'Metformin', 'Amlodipine', 'Omeprazole',
+      'Simvastatin', 'Losartan', 'Aspirin', 'Warfarin', 'Insulin', 'Prednisone', 'Furosemide',
+      'Metoprolol', 'Atorvastatin', 'Levothyroxine', 'Albuterol', 'Cetirizine', 'Loratadine'
+    ];
+    const dosages = ['500mg', '250mg', '100mg', '50mg', '25mg', '10mg', '5mg', '2.5mg'];
+    const frequencies = ['Once daily', 'Twice daily', 'Three times daily', 'Four times daily', 'As needed', 'Every 6 hours', 'Every 8 hours', 'Every 12 hours'];
+    const durations = ['3 days', '5 days', '7 days', '10 days', '14 days', '30 days', '60 days', '90 days'];
+    const routes = ['Oral', 'IV', 'IM', 'Topical', 'Inhalation', 'Other'];
+
+    const medications = [];
+    let prescriptionCounter = 1;
+
+    for (let i = 1; i <= 400; i++) {
+      const encounter = insertedEncounters[Math.floor(Math.random() * insertedEncounters.length)];
+      const patient = insertedPatients.find(p => p.patient_id === encounter.patient.patient_id);
+      const doctor = insertedDoctors.find(d => d.doctor_id === encounter.doctor.doctor_id);
+      const medicationName = randomChoice(medicationNames);
+      const dosage = randomChoice(dosages);
+      const frequency = randomChoice(frequencies);
+      const duration = randomChoice(durations);
+      const route = randomChoice(routes);
+
+      // Generate unique prescription_id
+      const prescriptionId = `RX-A-${String(prescriptionCounter).padStart(6, '0')}`;
+      prescriptionCounter++;
+
+      medications.push({
+        prescription_id: prescriptionId,
         encounter: {
-          encounter_id: encounters[0].encounter_id,
-          encounter_ref: encounters[0]._id,
+          encounter_id: encounter.encounter_id,
+          encounter_ref: encounter._id,
         },
         patient: {
-          patient_id: patients[0].patient_id,
-          patient_name: patients[0].full_name,
+          patient_id: patient.patient_id,
+          patient_name: `${patient.first_name} ${patient.last_name}`,
         },
         doctor: {
-          doctor_id: doctors[0].doctor_id,
-          doctor_name: doctors[0].full_name,
+          doctor_id: doctor.doctor_id,
+          doctor_name: `Dr. ${doctor.first_name} ${doctor.last_name}`,
         },
         hospital_id: HOSPITAL_A_ID,
-        medication_name: 'Metoprolol',
-        generic_name: 'Metoprolol Tartrate',
-        dosage: '50mg',
-        frequency: 'Once daily',
-        duration: '30 days',
-        route: 'Oral',
-        instructions: 'Take with food in the morning',
-        quantity: 30,
-        refills_allowed: 2,
-        status: 'Active',
-      },
-      {
-        encounter: {
-          encounter_id: encounters[1].encounter_id,
-          encounter_ref: encounters[1]._id,
-        },
-        patient: {
-          patient_id: patients[1].patient_id,
-          patient_name: patients[1].full_name,
-        },
-        doctor: {
-          doctor_id: doctors[1].doctor_id,
-          doctor_name: doctors[1].full_name,
-        },
-        hospital_id: HOSPITAL_A_ID,
-        medication_name: 'Artemether-Lumefantrine',
-        generic_name: 'Coartem',
-        dosage: '80mg/480mg',
-        frequency: 'Twice daily',
-        duration: '3 days',
-        route: 'Oral',
-        instructions: 'Take with food',
-        quantity: 6,
-        refills_allowed: 0,
-        status: 'Completed',
-      },
-    ]);
-    console.log(` ${medications.length} medications seeded`);
+        medication_name: medicationName,
+        generic_name: medicationName, // Simplified
+        dosage: dosage,
+        frequency: frequency,
+        duration: duration,
+        route: route,
+        instructions: `Take ${dosage} ${frequency.toLowerCase()} for ${duration}`,
+        quantity: Math.floor(Math.random() * 30) + 1,
+        refills_allowed: Math.floor(Math.random() * 3),
+        status: randomChoice(['Active', 'Completed', 'Active', 'Active']), // Mostly active
+      });
+    }
 
-    console.log('\n Hospital A data populated successfully!');
+    const insertedMedications = await Medication.insertMany(medications);
+    console.log(`${insertedMedications.length} medications seeded`);
+
+    console.log('\nHospital A enhanced data populated successfully!');
     console.log(`Summary:`);
-    console.log(`   - Doctors: ${doctors.length}`);
-    console.log(`   - Nurses: ${nurses.length}`);
-    console.log(`   - Patients: ${patients.length}`);
-    console.log(`   - Encounters: ${encounters.length}`);
-    console.log(`   - Medications: ${medications.length}`);
+    console.log(`   - Doctors: ${insertedDoctors.length}`);
+    console.log(`   - Nurses: ${insertedNurses.length}`);
+    console.log(`   - Patients: ${insertedPatients.length}`);
+    console.log(`   - Encounters: ${insertedEncounters.length}`);
+    console.log(`   - Medications: ${insertedMedications.length}`);
 
   } catch (err) {
-    console.error(' Error populating Hospital A:', err);
+    console.error('Error populating Hospital A:', err);
     process.exit(1);
   } finally {
     if (connection) {
       await connection.close();
-      console.log(' Disconnected from Hospital A database');
+      console.log('Disconnected from Hospital A database');
     }
     process.exit(0);
   }

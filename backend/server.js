@@ -157,4 +157,6 @@ process.on('unhandledRejection', (reason, promise) => {
 // Start the server
 startServer();
 
+// Trigger nodemon restart
+
 module.exports = app;
