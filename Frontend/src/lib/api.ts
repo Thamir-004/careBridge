@@ -50,6 +50,29 @@ export interface BackendPatient {
   age?: number;
 }
 
+export interface Doctor {
+  doctor_id: string;
+  first_name: string;
+  last_name: string;
+  middle_name?: string;
+  specialty: string;
+  phone_number: string;
+  email: string;
+  status: string;
+  availability_status: string;
+  hospital_name: string;
+  hospital_id: string;
+}
+
+export interface TransferRequest {
+  patientId: string;
+  fromHospital: string;
+  toHospital: string;
+  reason: string;
+  transferredBy: string;
+  includeFullHistory?: boolean;
+}
+
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
@@ -92,6 +115,27 @@ function calculateAge(birthDate: Date): number {
   return age;
 }
 
+// Search patients across all hospitals
+export async function searchPatients(query: string, field: string = 'lastName', authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<Patient[]> {
+  try {
+    const fetchFn = authenticatedFetch || fetch;
+    const response = await fetchFn(`${API_BASE_URL}/patients/search/all?query=${encodeURIComponent(query)}&field=${field}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result: ApiResponse<BackendPatient[]> = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || 'Failed to search patients');
+    }
+
+    return result.data ? result.data.map(mapBackendToFrontend) : [];
+  } catch (error) {
+    console.error('Error searching patients:', error);
+    throw error;
+  }
+}
+
 // Fetch patients from a hospital
 export async function fetchPatients(hospitalName: string = 'City General', authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<Patient[]> {
   const hospitalId = HOSPITAL_IDS[hospitalName as keyof typeof HOSPITAL_IDS] || 'HOSP_A_001';
@@ -111,6 +155,79 @@ export async function fetchPatients(hospitalName: string = 'City General', authe
     return result.data.map(mapBackendToFrontend);
   } catch (error) {
     console.error('Error fetching patients:', error);
+    throw error;
+  }
+}
+
+// Fetch doctors from a hospital
+export async function fetchDoctors(hospitalName: string = 'City General', authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<Doctor[]> {
+  const hospitalId = HOSPITAL_IDS[hospitalName as keyof typeof HOSPITAL_IDS] || 'HOSP_A_001';
+
+  try {
+    const fetchFn = authenticatedFetch || fetch;
+    const response = await fetchFn(`${API_BASE_URL}/doctors/${hospitalId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result: ApiResponse<Doctor[]> = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || 'Failed to fetch doctors');
+    }
+
+    return result.data || [];
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    throw error;
+  }
+}
+
+// Search doctors across all hospitals
+export async function searchDoctors(query: string, authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<Doctor[]> {
+  try {
+    const fetchFn = authenticatedFetch || fetch;
+    const response = await fetchFn(`${API_BASE_URL}/doctors/search/all?query=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result: ApiResponse<Doctor[]> = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || 'Failed to search doctors');
+    }
+
+    return result.data || [];
+  } catch (error) {
+    console.error('Error searching doctors:', error);
+    throw error;
+  }
+}
+
+// Transfer a patient
+export async function transferPatient(transferData: TransferRequest, authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<any> {
+  try {
+    const fetchFn = authenticatedFetch || fetch;
+    const response = await fetchFn(`${API_BASE_URL}/transfer/patient`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(transferData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result: ApiResponse<any> = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || 'Failed to transfer patient');
+    }
+
+    return result.data;
+  } catch (error) {
+    console.error('Error transferring patient:', error);
     throw error;
   }
 }

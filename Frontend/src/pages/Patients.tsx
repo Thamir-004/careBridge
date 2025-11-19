@@ -42,8 +42,8 @@ export default function Patients() {
   const [newPatient, setNewPatient] = useState({
     name: "",
     age: "",
-    gender: "",
-    bloodType: "",
+    gender: "Male",
+    bloodType: "A+",
     phone: "",
     hospital: "City General",
   });
@@ -73,7 +73,7 @@ export default function Patients() {
     };
 
     loadPatients();
-  }, [toast, authenticatedFetch]);
+  }, [toast]);
 
   const handleTransfer = (patientId: string) => {
     navigate("/transfer");
@@ -98,8 +98,8 @@ export default function Patients() {
       setNewPatient({
         name: "",
         age: "",
-        gender: "",
-        bloodType: "",
+        gender: "Male",
+        bloodType: "A+",
         phone: "",
         hospital: "City General",
       });
