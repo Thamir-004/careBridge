@@ -1550,3 +1550,62 @@
 {"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:52:57"}
 {"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:52:57"}
 {"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:52:59"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:52:59"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:52:59"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:52:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:57:34","url":"/api/patients/search/all?query=helle&field=firstName","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"level":"error","message":"Error fetching patient: No database connection found for hospital: search","stack":"Error: No database connection found for hospital: search\n    at DatabaseManager.getConnection (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\config\\db.js:152:13)\n    at PatientService.getModel (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\services\\PatientService.js:10:34)\n    at PatientService.getPatientById (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\services\\PatientService.js:61:28)\n    at c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\routes\\patientRoutes.js:52:42\n    at Layer.handle [as handle_request] (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)","timestamp":"2025-11-19 23:57:34"}
+{"level":"error","message":"Error fetching patient: No database connection found for hospital: search","stack":"Error: No database connection found for hospital: search\n    at DatabaseManager.getConnection (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\config\\db.js:152:13)\n    at PatientService.getModel (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\services\\PatientService.js:10:34)\n    at PatientService.getPatientById (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\services\\PatientService.js:61:28)\n    at c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\routes\\patientRoutes.js:52:42\n    at Layer.handle [as handle_request] (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (c:\\Users\\ADMIN\\Desktop\\CareBridge\\backend\\node_modules\\express\\lib\\router\\index.js:365:14)","timestamp":"2025-11-19 23:57:34"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:57:40","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:57:40"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:59:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:59:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:00:59","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:00:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:01:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:01:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:12:25","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:12:25"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:12:27","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:12:27"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 00:13:35"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-20 00:13:37"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-20 00:13:37"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-20 00:13:37"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-20 00:13:37"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 00:13:49"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-20 00:13:50"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-20 00:13:50"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-20 00:13:50"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-20 00:13:50"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 00:14:12"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-20 00:14:13"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-20 00:14:14"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-20 00:14:14"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-20 00:14:14"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 00:14:25"}

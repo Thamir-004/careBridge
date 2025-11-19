@@ -5,6 +5,46 @@ const logger = require('../utils/logger');
 const { validatePatient } = require('../middleware/validation');
 
 /**
+ * GET /api/patients/search/all
+ * Search for patients across all hospitals
+ */
+router.get('/search/all', async (req, res) => {
+  try {
+    const { query, field = 'lastName' } = req.query;
+
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: 'Search query is required',
+      });
+    }
+
+    const results = await patientService.searchPatientsAcrossHospitals(query, field);
+
+    logger.info('Cross-hospital patient search', {
+      query,
+      field,
+      totalResults: results.length,
+    });
+
+    res.json({
+      success: true,
+      query,
+      field,
+      count: results.length,
+      data: results,
+    });
+  } catch (error) {
+    logger.error('Error searching patients:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to search patients',
+      error: error.message,
+    });
+  }
+});
+
+/**
  * GET /api/patients/:hospitalId
  * Get all patients from a specific hospital
  */
@@ -192,45 +232,6 @@ router.delete('/:hospitalId/:patientId', async (req, res) => {
   }
 });
 
-/**
- * GET /api/patients/search/all
- * Search for patients across all hospitals
- */
-router.get('/search/all', async (req, res) => {
-  try {
-    const { query, field = 'lastName' } = req.query;
-    
-    if (!query) {
-      return res.status(400).json({
-        success: false,
-        message: 'Search query is required',
-      });
-    }
-    
-    const results = await patientService.searchPatientsAcrossHospitals(query, field);
-    
-    logger.info('Cross-hospital patient search', {
-      query,
-      field,
-      totalResults: results.length,
-    });
-    
-    res.json({
-      success: true,
-      query,
-      field,
-      count: results.length,
-      data: results,
-    });
-  } catch (error) {
-    logger.error('Error searching patients:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to search patients',
-      error: error.message,
-    });
-  }
-});
 
 /**
  * GET /api/patients/:hospitalId/:patientId/history

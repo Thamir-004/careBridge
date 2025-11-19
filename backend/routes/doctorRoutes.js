@@ -4,6 +4,44 @@ const doctorService = require('../services/DoctorService');
 const logger = require('../utils/logger');
 
 /**
+ * GET /api/doctors/search/all
+ * Search for doctors across all hospitals
+ */
+router.get('/search/all', async (req, res) => {
+  try {
+    const { query } = req.query;
+
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: 'Search query is required',
+      });
+    }
+
+    const results = await doctorService.searchDoctorsAcrossHospitals(query);
+
+    logger.info('Cross-hospital doctor search', {
+      query,
+      totalResults: results.length,
+    });
+
+    res.json({
+      success: true,
+      query,
+      count: results.length,
+      data: results,
+    });
+  } catch (error) {
+    logger.error('Error searching doctors:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to search doctors',
+      error: error.message,
+    });
+  }
+});
+
+/**
  * GET /api/doctors/:hospitalId
  * Get all doctors from a specific hospital
  */
@@ -192,43 +230,6 @@ router.delete('/:hospitalId/:doctorId', async (req, res) => {
   }
 });
 
-/**
- * GET /api/doctors/search/all
- * Search for doctors across all hospitals
- */
-router.get('/search/all', async (req, res) => {
-  try {
-    const { query } = req.query;
-
-    if (!query) {
-      return res.status(400).json({
-        success: false,
-        message: 'Search query is required',
-      });
-    }
-
-    const results = await doctorService.searchDoctorsAcrossHospitals(query);
-
-    logger.info('Cross-hospital doctor search', {
-      query,
-      totalResults: results.length,
-    });
-
-    res.json({
-      success: true,
-      query,
-      count: results.length,
-      data: results,
-    });
-  } catch (error) {
-    logger.error('Error searching doctors:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to search doctors',
-      error: error.message,
-    });
-  }
-});
 
 /**
  * GET /api/doctors/:hospitalId/available
