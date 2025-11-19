@@ -1061,3 +1061,492 @@
 {"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 22:34:41"}
 {"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 22:34:41"}
 {"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 22:34:41"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:26:39","url":"/api/health","userAgent":"curl/8.9.1"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:26:50","url":"/api/patients/HOSP_A_001","userAgent":"curl/8.9.1"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:26:50"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:29:13"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:29:15"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:29:15"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:29:15"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:29:15"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:34","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:34"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:34","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:35"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:35","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:35"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:35","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:35"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:35","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:35"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:35","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:36"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:36","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:36"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:36","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:36"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:36","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:36"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:36","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:37"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:37","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:37"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:37","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:38"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:38","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:38"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:38","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:38"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:38","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:40"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:40","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:40"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:40","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:40"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:40","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:41"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:41","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:41"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:41","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:41"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:41","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:42","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:42","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:42","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:42","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:42","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:43"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:43","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:43"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:43","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:43"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:43","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:43"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:43","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:43"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:43","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:44"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:44","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:45"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:45","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:45"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:45","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:45"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:45","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:45"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:45","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:45"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:45","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:46"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:46","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:46"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:46","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:46"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:46","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:46"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:46","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:46"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:46","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:47"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:47","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:48"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:48","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:48"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:48","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:49"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:49","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:49"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:49","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:49"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:49","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:50"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:50","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:50"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:50","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:50"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:50","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:50"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:50","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:50"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:50","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:51"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:51","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:51"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:51","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:52"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:52","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:52"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:52","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:52"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:52","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:53"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:53","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:53"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:53","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:54"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:54","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:54"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:54","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:55"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:55","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:55"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:55","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:55"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:55","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:56"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:56"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:56"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:56"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:30:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:30:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:31:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:31:01"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:32:29"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:32:30"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:32:30"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:32:30"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:32:30"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:56"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:56","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:57"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:57","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:39:59"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:39:59","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:00"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:00","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:02"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:02","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:02"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:02","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:02"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:02","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:02"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:02","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:04"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:04","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:04"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:04","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:05"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:05","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:05"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:05","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:05"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:05","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:05"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:05","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:05"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:05","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:06"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:06","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:06"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:06","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:06"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:06","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:06"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:06","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:06"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:06","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:07"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:07"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:07"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:07"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:07"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:08","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:08","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:08","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:08","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:08","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:09"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:09","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:09"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:09","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:09"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:09","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:09"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:09","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:09"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:09","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:10"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:10","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:10"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:10","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:10"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:10","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:10"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:10","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:11"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:11","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:11"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:11","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:11"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:11","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:11"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:11","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:12"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:12","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:12"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:12","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:12"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:12","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:13"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:13","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:13"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:13","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:13"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:13","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:13"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:13","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:14"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:14","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:14"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:14","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:14"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:14","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:14"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:14","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:15"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:15","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:15"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:15","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:15"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:15","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:16"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:16","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:16"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:16","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:16"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:16","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:16"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:16","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:17"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:17","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:17"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:17","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:17"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:17","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:17"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:17","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:17"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:17","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:18"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:18","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:18"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:18","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:18"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:18","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:18"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:18","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:19"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:19"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:19"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:20"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:20","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:20"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:40:20","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:40:20"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:43:22"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:43:24"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:43:24"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:43:24"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:43:26"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:44:03","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:44:03"}
+{"ip":"::1","level":"info","message":"Request received","method":"POST","timestamp":"2025-11-19 23:44:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"0":"gender is required","level":"warn","message":"Patient validation failed:","timestamp":"2025-11-19 23:44:19"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:45:23","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:45:23"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:45:34","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":5,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:45:34"}
+{"ip":"::1","level":"info","message":"Request received","method":"POST","timestamp":"2025-11-19 23:46:16","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"level":"info","message":"Patient created: PAT-A-176109","timestamp":"2025-11-19 23:46:16"}
+{"level":"info","message":"Created patient in HOSP_A_001","timestamp":"2025-11-19 23:46:16"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-19 23:48:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-19 23:48:20"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:52:18"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:52:20"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:52:20"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:52:21"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:52:21"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:52:22"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:52:25"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:52:26"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:52:26"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:52:26"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:52:43"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-19 23:52:45"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-19 23:52:45"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-19 23:52:45"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-19 23:52:46"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-19 23:52:57"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-19 23:52:57"}

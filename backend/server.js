@@ -9,6 +9,7 @@ const logger = require('./utils/logger');
 
 const hospitalRoutes = require('./routes/hospitalRoutes');
 const patientRoutes = require('./routes/patientRoutes');
+const doctorRoutes = require('./routes/doctorRoutes');
 const transferRoutes = require('./routes/transferRoutes');
 const queryRoutes = require('./routes/queryRoutes');
 
@@ -20,13 +21,21 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 
 // CORS
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
+const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(',')
   : ['http://localhost:3000', 'http://localhost:5173'];
 
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+// Handle preflight requests
+app.options('*', cors({
+  origin: allowedOrigins,
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Body parser
@@ -36,10 +45,10 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // Rate limiting
 const limiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
-  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
+  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 1000, // Increased for development
   message: 'Too many requests from this IP, please try again later.',
 });
-app.use('/api', limiter);
+// app.use('/api', limiter); // Disabled for development
 
 // Request logging
 app.use((req, res, next) => {
@@ -86,6 +95,7 @@ app.get('/api/health', async (req, res) => {
 // API routes
 app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/patients', patientRoutes);
+app.use('/api/doctors', doctorRoutes);
 app.use('/api/transfer', transferRoutes);
 // app.use('/api/query', queryRoutes); // Commented out due to empty queryRoutes.js
 
