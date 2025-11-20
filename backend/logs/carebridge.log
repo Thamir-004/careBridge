@@ -1609,3 +1609,46 @@
 {"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 00:14:25"}
 {"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 00:14:25"}
 {"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 00:14:25"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-20 00:14:26"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-20 00:14:26"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-20 00:14:26"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-20 00:14:26"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:14:43","url":"/api/patients/search/all?query=test&field=firstName","userAgent":"curl/8.9.1"}
+{"field":"firstName","level":"info","message":"Cross-hospital patient search","query":"test","timestamp":"2025-11-20 00:14:44","totalResults":0}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:16:35","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:16:35"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 00:16:40","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 00:16:40"}
+{"level":"info","message":"Initializing database connections...","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"Found 3 hospital configurations","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"All database connections established successfully","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"🚀 CareBridge API server running on port 5000","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"📍 Environment: development","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"🏥 Connected hospitals: 3","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:5000/api","timestamp":"2025-11-20 07:45:41"}
+{"level":"info","message":"✓ Connected to City General Hospital database","timestamp":"2025-11-20 07:45:42"}
+{"level":"info","message":"✓ Connected to Metro Medical Center database","timestamp":"2025-11-20 07:45:42"}
+{"level":"info","message":"✓ Connected to Audit database","timestamp":"2025-11-20 07:45:42"}
+{"level":"info","message":"✓ Connected to Regional Health Center database","timestamp":"2025-11-20 07:45:42"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:47:01","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:47:01"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:47:10","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:47:10"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:51:19","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:51:19"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:52:53","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:52:53"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:54:53","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:54:54"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 07:55:02","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 07:55:02"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 08:00:39","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 08:00:39"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 08:00:55","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 08:00:55"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 08:00:58","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 08:00:58"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 08:02:07","url":"/api/patients/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":6,"level":"info","message":"Retrieved patients from HOSP_A_001","page":1,"timestamp":"2025-11-20 08:02:08"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","timestamp":"2025-11-20 08:02:10","url":"/api/doctors/HOSP_A_001","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"count":0,"level":"info","message":"Retrieved doctors from HOSP_A_001","page":1,"timestamp":"2025-11-20 08:02:11"}
