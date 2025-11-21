@@ -3,6 +3,13 @@ const router = express.Router();
 const transferService = require('../services/TransferService');
 const logger = require('../utils/logger');
 
+// Hospital name to ID mapping
+const HOSPITAL_MAPPING = {
+  'City General': 'HOSP_A_001',
+  'County Medical': 'HOSP_B_001',
+  'Metro Medical Center': 'HOSP_B_001', // Assuming Metro is B
+};
+
 /**
  * POST /api/transfer/patient
  * Transfer a patient from one hospital to another
@@ -52,6 +59,22 @@ router.post('/patient', async (req, res) => {
       patientId,
       transferId: result.transferId,
     });
+
+    // Real-time notification to destination hospital
+    const toHospitalId = HOSPITAL_MAPPING[toHospital];
+    if (toHospitalId && req.app.get('io')) {
+      const io = req.app.get('io');
+      io.to(`hospital-${toHospitalId}`).emit('new-transfer', {
+        transferId: result.transferId,
+        patientId,
+        fromHospital,
+        toHospital,
+        reason,
+        transferredBy,
+        timestamp: new Date().toISOString(),
+      });
+      logger.info(`Real-time notification sent to hospital-${toHospitalId}`);
+    }
 
     res.status(200).json({
       success: true,
@@ -201,6 +224,23 @@ router.post('/approve', async (req, res) => {
     });
 
     logger.info(`Transfer approved: ${transferId}`, { approvedBy });
+
+    // Real-time notification to originating hospital
+    // Assuming we can get fromHospital from the transfer data
+    if (result && result.fromHospital && req.app.get('io')) {
+      const fromHospitalId = HOSPITAL_MAPPING[result.fromHospital];
+      if (fromHospitalId) {
+        const io = req.app.get('io');
+        io.to(`hospital-${fromHospitalId}`).emit('transfer-status-update', {
+          transferId,
+          status: 'approved',
+          approvedBy,
+          notes,
+          timestamp: new Date().toISOString(),
+        });
+        logger.info(`Status update sent to hospital-${fromHospitalId}`);
+      }
+    }
 
     res.json({
       success: true,
@@ -371,6 +411,47 @@ router.get('/:transferId', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to retrieve transfer details',
+      error: error.message,
+    });
+  }
+});
+
+/**
+ * GET /api/transfer/all/list
+ * Get all transfers across all hospitals
+ */
+router.get('/all/list', async (req, res) => {
+  try {
+    const { limit = 100, offset = 0, status, fromHospital, toHospital, hospital } = req.query;
+
+    const transfers = await transferService.getAllTransfers({
+      limit: parseInt(limit),
+      offset: parseInt(offset),
+      status,
+      fromHospital,
+      toHospital,
+    });
+
+    // Filter by hospital if specified
+    let filteredTransfers = transfers;
+    if (hospital) {
+      filteredTransfers = transfers.filter(transfer =>
+        transfer.fromHospital === hospital || transfer.toHospital === hospital
+      );
+    }
+
+    logger.info(`Retrieved ${filteredTransfers.length} transfers`);
+
+    res.json({
+      success: true,
+      count: filteredTransfers.length,
+      data: filteredTransfers,
+    });
+  } catch (error) {
+    logger.error('Error fetching all transfers:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to retrieve transfers',
       error: error.message,
     });
   }

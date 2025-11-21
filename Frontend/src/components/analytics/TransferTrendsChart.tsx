@@ -1,43 +1,29 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 interface TransferTrendsChartProps {
-  days: number;
+  data: any[];
 }
 
-// Generate mock data based on days
-const generateData = (days: number) => {
-  const data = [];
-  const today = new Date();
-  
-  for (let i = days - 1; i >= 0; i--) {
-    const date = new Date(today);
-    date.setDate(date.getDate() - i);
-    
-    data.push({
-      date: date.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-      "City General": Math.floor(Math.random() * 8) + 3,
-      "County Medical": Math.floor(Math.random() * 6) + 2,
-      "Regional Health": Math.floor(Math.random() * 5) + 1,
-    });
-  }
-  
-  return data;
-};
-
-export const TransferTrendsChart = ({ days }: TransferTrendsChartProps) => {
-  const data = generateData(days);
+export const TransferTrendsChart = ({ data }: TransferTrendsChartProps) => {
+  // Transform the data to match the expected format for the chart
+  const chartData = data?.map((item: any) => ({
+    date: item.date,
+    "City General": item.cityGeneral || 0,
+    "County Medical": item.countyMedical || 0,
+    "Regional Health": item.regionalHealth || 0,
+  })) || [];
 
   return (
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-          <XAxis 
-            dataKey="date" 
+          <XAxis
+            dataKey="date"
             className="text-xs text-muted-foreground"
             tick={{ fill: "hsl(var(--muted-foreground))" }}
           />
-          <YAxis 
+          <YAxis
             className="text-xs text-muted-foreground"
             tick={{ fill: "hsl(var(--muted-foreground))" }}
           />
@@ -49,7 +35,7 @@ export const TransferTrendsChart = ({ days }: TransferTrendsChartProps) => {
               color: "hsl(var(--popover-foreground))",
             }}
           />
-          <Legend 
+          <Legend
             wrapperStyle={{
               paddingTop: "20px",
               color: "hsl(var(--foreground))",

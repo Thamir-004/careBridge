@@ -27,7 +27,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { fetchDoctors, searchDoctors, type Doctor, useAuthenticatedFetch } from "@/lib/api";
+import { fetchDoctors, searchDoctors, createDoctor, type Doctor, useAuthenticatedFetch } from "@/lib/api";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Doctors() {
@@ -107,12 +107,35 @@ export default function Doctors() {
   };
 
   const handleAddDoctor = async () => {
-    // For now, just show a message since we don't have create doctor API implemented
-    toast({
-      title: "Feature Coming Soon",
-      description: "Adding doctors functionality will be available soon.",
-    });
-    setShowAddDialog(false);
+    console.log('handleAddDoctor called with data:', newDoctor);
+    setAddingDoctor(true);
+    try {
+      await createDoctor(newDoctor, authenticatedFetch);
+      toast({
+        title: "Success",
+        description: "Doctor added successfully.",
+      });
+      setShowAddDialog(false);
+      setNewDoctor({
+        firstName: "",
+        lastName: "",
+        specialty: "",
+        phone: "",
+        email: "",
+        hospital: "City General",
+      });
+      // Refresh the doctors list
+      const fetchedDoctors = await fetchDoctors(selectedHospital, authenticatedFetch);
+      setDoctors(fetchedDoctors);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to add doctor.",
+        variant: "destructive",
+      });
+    } finally {
+      setAddingDoctor(false);
+    }
   };
 
   const filteredDoctors = doctors.filter(doctor =>

@@ -336,7 +336,7 @@ PatientSchema.pre("save", function (next) {
   // Kenya phone format: +254XXXXXXXXX or 07XXXXXXXX
   if (this.phone_number) {
     const cleaned = this.phone_number.replace(/\s+/g, "");
-    if (!/^(\+254|0)[17]\d{8}$/.test(cleaned)) {
+    if (!/^(\+254|0)[1-9]\d{8}$/.test(cleaned)) {
       next(new Error("Invalid Kenyan phone number format"));
     }
   }

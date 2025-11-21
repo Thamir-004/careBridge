@@ -9,40 +9,11 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
-const hospitalStats = [
-  {
-    name: "City General Hospital",
-    patients: 1234,
-    transfers_in: 95,
-    transfers_out: 77,
-    avg_stay: "5.2 days",
-    occupancy: 87,
-    satisfaction: 94,
-    trend: "up",
-  },
-  {
-    name: "County Medical Center",
-    patients: 890,
-    transfers_in: 63,
-    transfers_out: 85,
-    avg_stay: "4.8 days",
-    occupancy: 78,
-    satisfaction: 91,
-    trend: "up",
-  },
-  {
-    name: "Regional Health Facility",
-    patients: 567,
-    transfers_in: 50,
-    transfers_out: 60,
-    avg_stay: "6.1 days",
-    occupancy: 72,
-    satisfaction: 89,
-    trend: "down",
-  },
-];
+interface HospitalStatsTableProps {
+  data: any[];
+}
 
-export const HospitalStatsTable = () => {
+export const HospitalStatsTable = ({ data }: HospitalStatsTableProps) => {
   return (
     <div className="rounded-md border border-border overflow-x-auto">
       <Table>
@@ -59,7 +30,7 @@ export const HospitalStatsTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {hospitalStats.map((hospital) => (
+          {data.map((hospital) => (
             <TableRow key={hospital.name}>
               <TableCell className="font-medium">{hospital.name}</TableCell>
               <TableCell className="text-right">

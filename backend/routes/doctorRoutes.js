@@ -121,6 +121,8 @@ router.post('/:hospitalId', async (req, res) => {
     const { hospitalId } = req.params;
     const doctorData = req.body;
 
+    logger.info('POST /api/doctors/:hospitalId called', { hospitalId, doctorData });
+
     const newDoctor = await doctorService.createDoctor(hospitalId, doctorData);
 
     logger.info(`Created doctor in ${hospitalId}`, {

@@ -100,7 +100,11 @@ const getPatientDetails = (patientId: string) => ({
 });
 
 export function PatientDetailView({ patient, open, onClose, onTransfer }: PatientDetailViewProps) {
-  if (!patient) return null;
+  console.log('PatientDetailView rendered with patient:', patient, 'open:', open);
+  if (!patient) {
+    console.log('PatientDetailView: patient is null, returning null');
+    return null;
+  }
 
   const details = getPatientDetails(patient.id);
 
@@ -342,7 +346,10 @@ export function PatientDetailView({ patient, open, onClose, onTransfer }: Patien
               <Button
                 className="flex-1"
                 onClick={() => {
+                  console.log('Transfer Patient button clicked for patient:', patient.id);
+                  console.log('Calling onTransfer with patientId:', patient.id);
                   onTransfer(patient.id);
+                  console.log('onTransfer called, now closing sheet');
                   onClose();
                 }}
               >

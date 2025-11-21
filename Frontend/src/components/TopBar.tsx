@@ -9,17 +9,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { useState } from "react";
 import { useUser, SignOutButton } from '@clerk/clerk-react';
-
-const hospitals = [
-  { id: "HOSP_A_001", name: "City General Hospital" },
-  { id: "HOSP_B_001", name: "County Medical Center" },
-  { id: "HOSP_C_001", name: "Regional Health Facility" },
-];
+import { useHospital } from "@/contexts/HospitalContext";
 
 export const TopBar = () => {
-  const [selectedHospital, setSelectedHospital] = useState(hospitals[0]);
+  const { selectedHospital, setSelectedHospital, hospitals } = useHospital();
   const { user } = useUser();
 
   return (

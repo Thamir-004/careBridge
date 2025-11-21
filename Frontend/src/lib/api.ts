@@ -1,6 +1,7 @@
 import { useAuth } from '@clerk/clerk-react';
+import { useCallback } from 'react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 // Hospital ID mappings
 const HOSPITAL_IDS = {
@@ -12,7 +13,7 @@ const HOSPITAL_IDS = {
 export const useAuthenticatedFetch = () => {
   const { getToken } = useAuth();
 
-  const authenticatedFetch = async (url: string, options: RequestInit = {}) => {
+  const authenticatedFetch = useCallback(async (url: string, options: RequestInit = {}) => {
     const token = await getToken();
     const headers = {
       ...options.headers,
@@ -20,7 +21,7 @@ export const useAuthenticatedFetch = () => {
     };
 
     return fetch(url, { ...options, headers });
-  };
+  }, [getToken]);
 
   return authenticatedFetch;
 };
@@ -274,6 +275,57 @@ export async function createPatient(patientData: Omit<Patient, 'id' | 'status'>,
     return mapBackendToFrontend(result.data);
   } catch (error) {
     console.error('Error creating patient:', error);
+    throw error;
+  }
+}
+
+// Create a new doctor
+export async function createDoctor(doctorData: {
+  firstName: string;
+  lastName: string;
+  specialty: string;
+  phone: string;
+  email: string;
+  hospital: string;
+}, authenticatedFetch?: (url: string, options?: RequestInit) => Promise<Response>): Promise<Doctor> {
+  const hospitalId = HOSPITAL_IDS[doctorData.hospital as keyof typeof HOSPITAL_IDS] || 'HOSP_A_001';
+
+  // Map frontend data to backend format
+  const backendData = {
+    doctor_id: `DOC-${hospitalId.split('_')[1]}-${String(Date.now()).slice(-6)}`, // Generate ID
+    license_number: `LIC-${Date.now()}`, // Generate license
+    first_name: doctorData.firstName,
+    last_name: doctorData.lastName,
+    specialty: doctorData.specialty,
+    phone_number: doctorData.phone,
+    email: doctorData.email,
+    hospital_id: hospitalId,
+    hospital_name: doctorData.hospital,
+  };
+
+  try {
+    const fetchFn = authenticatedFetch || fetch;
+    const response = await fetchFn(`${API_BASE_URL}/doctors/${hospitalId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(backendData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result: ApiResponse<Doctor> = await response.json();
+
+    if (!result.success || !result.data) {
+      throw new Error(result.message || 'Failed to create doctor');
+    }
+
+    return result.data;
+  } catch (error) {
+    console.error('Error creating doctor:', error);
     throw error;
   }
 }

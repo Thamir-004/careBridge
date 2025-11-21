@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Calendar, Filter, List, Activity } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Calendar, Filter, List, Activity, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,114 +14,57 @@ import {
 import { TransferTimeline } from "@/components/transfers/TransferTimeline";
 import { TransferTable } from "@/components/transfers/TransferTable";
 import { toast } from "@/hooks/use-toast";
-
-// Mock transfer data
-const allTransfers = [
-  {
-    id: "TRF-001",
-    patientName: "John Doe",
-    patientId: "PAT-A-001",
-    fromHospital: "City General",
-    toHospital: "County Medical",
-    date: new Date().toISOString().split("T")[0],
-    time: "14:30",
-    reason: "Specialist care required - Cardiology consultation",
-    status: "completed" as const,
-    transferredBy: "Dr. Amina Omar",
-  },
-  {
-    id: "TRF-002",
-    patientName: "Mary Atieno",
-    patientId: "PAT-A-002",
-    fromHospital: "County Medical",
-    toHospital: "City General",
-    date: new Date().toISOString().split("T")[0],
-    time: "11:15",
-    reason: "Emergency transfer - Trauma care",
-    status: "completed" as const,
-    transferredBy: "Dr. John Mwangi",
-  },
-  {
-    id: "TRF-003",
-    patientName: "David Kamau",
-    patientId: "PAT-A-003",
-    fromHospital: "City General",
-    toHospital: "Metro Hospital",
-    date: new Date(Date.now() - 86400000).toISOString().split("T")[0],
-    time: "16:45",
-    reason: "Patient request - Family proximity",
-    status: "completed" as const,
-    transferredBy: "Dr. Sarah Njeri",
-  },
-  {
-    id: "TRF-004",
-    patientName: "Sarah Wanjiku",
-    patientId: "PAT-A-004",
-    fromHospital: "Metro Hospital",
-    toHospital: "City General",
-    date: new Date(Date.now() - 86400000).toISOString().split("T")[0],
-    time: "09:20",
-    reason: "Specialist care required - Oncology",
-    status: "completed" as const,
-    transferredBy: "Dr. Michael Ochieng",
-  },
-  {
-    id: "TRF-005",
-    patientName: "James Omondi",
-    patientId: "PAT-A-005",
-    fromHospital: "County Medical",
-    toHospital: "Metro Hospital",
-    date: new Date(Date.now() - 172800000).toISOString().split("T")[0],
-    time: "13:00",
-    reason: "ICU availability",
-    status: "completed" as const,
-    transferredBy: "Dr. Jane Wambui",
-  },
-  {
-    id: "TRF-006",
-    patientName: "Grace Akinyi",
-    patientId: "PAT-B-012",
-    fromHospital: "City General",
-    toHospital: "County Medical",
-    date: new Date(Date.now() - 259200000).toISOString().split("T")[0],
-    time: "10:30",
-    reason: "Specialist care required - Neurology",
-    status: "completed" as const,
-    transferredBy: "Dr. Peter Kipchoge",
-  },
-  {
-    id: "TRF-007",
-    patientName: "Peter Mutua",
-    patientId: "PAT-C-045",
-    fromHospital: "Metro Hospital",
-    toHospital: "City General",
-    date: new Date(Date.now() - 345600000).toISOString().split("T")[0],
-    time: "15:45",
-    reason: "Emergency transfer - Surgical intervention needed",
-    status: "completed" as const,
-    transferredBy: "Dr. Lucy Chebet",
-  },
-  {
-    id: "TRF-008",
-    patientName: "Alice Njoki",
-    patientId: "PAT-A-008",
-    fromHospital: "County Medical",
-    toHospital: "Metro Hospital",
-    date: new Date().toISOString().split("T")[0],
-    time: "08:00",
-    reason: "Equipment availability - MRI scan required",
-    status: "pending" as const,
-    transferredBy: "Dr. Daniel Korir",
-  },
-];
+import { useAuthenticatedFetch, API_BASE_URL } from "@/lib/api";
+import { useHospital } from "@/contexts/HospitalContext";
 
 export default function Transfers() {
   const [sourceHospital, setSourceHospital] = useState<string>("all");
   const [destinationHospital, setDestinationHospital] = useState<string>("all");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const authenticatedFetch = useAuthenticatedFetch();
+  const { selectedHospital } = useHospital();
+
+  const { data: transfers, isLoading, error } = useQuery<any[]>({
+    queryKey: ['transfers', 'all', selectedHospital.id],
+    queryFn: async () => {
+      console.log('[DEBUG] Transfers: Starting fetch for transfers, queryKey:', ['transfers', 'all', selectedHospital.id]);
+      const response = await authenticatedFetch(`${API_BASE_URL}/transfer/all/list?hospital=${selectedHospital.id}`);
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message || 'Failed to fetch transfers');
+      }
+
+      console.log('[DEBUG] Transfers: Fetched transfers data, count:', result.data?.length || 0);
+      return result.data;
+    },
+  });
+
+  useEffect(() => {
+    if (transfers) {
+      console.log('[DEBUG] Transfers: Data updated, length:', transfers.length);
+    }
+  }, [transfers]);
+
+  useEffect(() => {
+    if (error) {
+      console.log('[DEBUG] Transfers: Error occurred:', error);
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (error) {
+      console.error('[DEBUG] Transfers: Fetch error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load transfers. Please try again.",
+        variant: "destructive",
+      });
+    }
+  }, [error, toast]);
 
   // Filter transfers based on selected criteria
-  const filteredTransfers = allTransfers.filter((transfer) => {
+  const filteredTransfers = (transfers || []).filter((transfer) => {
     const matchesSource =
       sourceHospital === "all" || transfer.fromHospital === sourceHospital;
     const matchesDestination =
@@ -221,7 +165,7 @@ export default function Transfers() {
           <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
             <span>
               Showing <strong>{filteredTransfers.length}</strong> of{" "}
-              <strong>{allTransfers.length}</strong> transfers
+              <strong>{transfers?.length || 0}</strong> transfers
             </span>
           </div>
         </CardContent>
@@ -246,25 +190,45 @@ export default function Transfers() {
             </div>
           </CardHeader>
           <CardContent>
-            <TabsContent value="timeline" className="mt-0">
-              {filteredTransfers.length > 0 ? (
-                <TransferTimeline transfers={filteredTransfers} />
-              ) : (
-                <div className="text-center py-12">
-                  <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <h3 className="font-semibold text-lg mb-2">No Transfers Found</h3>
-                  <p className="text-muted-foreground">
-                    Try adjusting your filters to see more results
-                  </p>
-                </div>
-              )}
-            </TabsContent>
-            <TabsContent value="table" className="mt-0">
-              <TransferTable
-                transfers={filteredTransfers}
-                onViewDetails={handleViewDetails}
-              />
-            </TabsContent>
+            {isLoading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin mr-2" />
+                <span>Loading transfers...</span>
+              </div>
+            ) : error ? (
+              <div className="text-center py-12 text-destructive">
+                <p>Error loading transfers: {error.message}</p>
+                <Button
+                  variant="outline"
+                  className="mt-4"
+                  onClick={() => window.location.reload()}
+                >
+                  Retry
+                </Button>
+              </div>
+            ) : (
+              <>
+                <TabsContent value="timeline" className="mt-0">
+                  {filteredTransfers.length > 0 ? (
+                    <TransferTimeline transfers={filteredTransfers} />
+                  ) : (
+                    <div className="text-center py-12">
+                      <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                      <h3 className="font-semibold text-lg mb-2">No Transfers Found</h3>
+                      <p className="text-muted-foreground">
+                        Try adjusting your filters to see more results
+                      </p>
+                    </div>
+                  )}
+                </TabsContent>
+                <TabsContent value="table" className="mt-0">
+                  <TransferTable
+                    transfers={filteredTransfers}
+                    onViewDetails={handleViewDetails}
+                  />
+                </TabsContent>
+              </>
+            )}
           </CardContent>
         </Tabs>
       </Card>

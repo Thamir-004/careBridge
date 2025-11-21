@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const { createServer } = require('http');
+const { Server } = require('socket.io');
 
 const dbManager = require('./config/db'); // Your path
 const logger = require('./utils/logger');
@@ -14,7 +16,40 @@ const transferRoutes = require('./routes/transferRoutes');
 const queryRoutes = require('./routes/queryRoutes');
 
 const app = express();
+const server = createServer(app);
 const PORT = process.env.PORT || 5000;
+
+// Socket.IO setup
+const io = new Server(server, {
+  cors: {
+    origin: process.env.ALLOWED_ORIGINS
+      ? process.env.ALLOWED_ORIGINS.split(',')
+      : ['http://localhost:3000', 'http://localhost:5173'],
+    credentials: true,
+  },
+});
+
+// Socket connection handling
+io.on('connection', (socket) => {
+  logger.info(`User connected: ${socket.id}`);
+
+  socket.on('join-hospital', (hospitalId) => {
+    socket.join(`hospital-${hospitalId}`);
+    logger.info(`User ${socket.id} joined hospital-${hospitalId}`);
+  });
+
+  socket.on('leave-hospital', (hospitalId) => {
+    socket.leave(`hospital-${hospitalId}`);
+    logger.info(`User ${socket.id} left hospital-${hospitalId}`);
+  });
+
+  socket.on('disconnect', () => {
+    logger.info(`User disconnected: ${socket.id}`);
+  });
+});
+
+// Make io available in routes
+app.set('io', io);
 
 // ===== MIDDLEWARE =====
 // Security
@@ -163,6 +198,27 @@ process.on('unhandledRejection', (reason, promise) => {
   logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
   process.exit(1);
 });
+
+// ===== SERVER STARTUP =====
+async function startServer() {
+  try {
+    // Initialize database connections
+    logger.info('Initializing database connections...');
+    await dbManager.initializeConnections();
+
+    // Start HTTP server with Socket.IO
+    server.listen(PORT, () => {
+      logger.info(`🚀 CareBridge API server running on port ${PORT}`);
+      logger.info(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
+      logger.info(`🏥 Connected hospitals: ${dbManager.getAllHospitals().length}`);
+      logger.info(`🔗 API Base URL: http://localhost:${PORT}/api`);
+      logger.info(`🔌 Socket.IO enabled on port ${PORT}`);
+    });
+  } catch (error) {
+    logger.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
 
 // Start the server
 startServer();

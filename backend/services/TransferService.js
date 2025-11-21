@@ -17,7 +17,9 @@ class TransferService {
    * Transfer patient from one hospital to another
    */
   async transferPatient(transferData) {
-    const { patientId, fromHospital, toHospital, reason, transferredBy } = transferData;
+    const { patientId, fromHospital, toHospital, reason, transferredBy, includeFullHistory = true } = transferData;
+
+    logger.info('TransferService.transferPatient called', { patientId, fromHospital, toHospital, includeFullHistory });
 
     try {
       const SourcePatient = this.getModel(fromHospital, getPatientModel);
@@ -33,11 +35,6 @@ class TransferService {
         throw new Error(`Patient ${patientId} not found in source hospital`);
       }
 
-      // Check if already exists in destination
-      const existing = await DestPatient.findOne({ patient_id: patientId });
-      if (existing) {
-        throw new Error(`Patient ${patientId} already exists in destination`);
-      }
 
       const transferId = `TRF-${Date.now().toString(36).toUpperCase()}`;
       const transferRecord = {
@@ -60,13 +57,36 @@ class TransferService {
       patientData.transfer_history = patientData.transfer_history || [];
       patientData.transfer_history.push(transferRecord);
 
-      const newPatient = new DestPatient(patientData);
-      await newPatient.save();
+      const patientFields = { ...patientData };
+      delete patientFields.transfer_history;
+      const newPatient = await DestPatient.findOneAndUpdate(
+        { phone_number: sourcePatient.phone_number },
+        {
+          $set: patientFields,
+          $push: { transfer_history: transferRecord }
+        },
+        { upsert: true, new: true }
+      );
 
       // Update source patient
       sourcePatient.status = 'Transferred';
       sourcePatient.transfer_history.push(transferRecord);
       await sourcePatient.save();
+
+      // Transfer medical records if requested
+      let recordsTransferred = null;
+      if (includeFullHistory) {
+        logger.info('Transferring medical records for patient:', patientId);
+        recordsTransferred = await this.transferRecords({
+          patientId,
+          fromHospital,
+          toHospital,
+          transferredBy,
+        });
+        logger.info('Medical records transferred:', recordsTransferred);
+      } else {
+        logger.info('Skipping medical records transfer (includeFullHistory=false)');
+      }
 
       logger.info(`Patient transferred: ${transferId}`);
 
@@ -74,6 +94,7 @@ class TransferService {
         success: true,
         transferId,
         patient: newPatient,
+        recordsTransferred,
       };
     } catch (error) {
       logger.error('Patient transfer failed:', error);
@@ -188,6 +209,57 @@ class TransferService {
       return { transferredIn, transferredOut, active };
     } catch (error) {
       logger.error('Error fetching stats:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get all transfers across all hospitals
+   */
+  async getAllTransfers(options = {}) {
+    try {
+      const { limit = 100, offset = 0, status, fromHospital, toHospital } = options;
+      const hospitals = dbManager.getAllHospitals();
+      const allTransfers = [];
+
+      for (const hospital of hospitals) {
+        const Patient = this.getModel(hospital.id, getPatientModel);
+
+        // Find patients with transfer history
+        const patients = await Patient.find({
+          'transfer_history.0': { $exists: true },
+          is_deleted: false,
+        }).select('patient_id first_name last_name transfer_history');
+
+        for (const patient of patients) {
+          for (const transfer of patient.transfer_history) {
+            // Apply filters
+            if (status && transfer.status !== status) continue;
+            if (fromHospital && transfer.from_hospital !== fromHospital) continue;
+            if (toHospital && transfer.to_hospital !== toHospital) continue;
+
+            allTransfers.push({
+              id: transfer.transfer_id,
+              patientName: `${patient.first_name} ${patient.last_name}`,
+              patientId: patient.patient_id,
+              fromHospital: transfer.from_hospital,
+              toHospital: transfer.to_hospital,
+              date: transfer.transfer_date.toISOString().split('T')[0],
+              time: new Date(transfer.transfer_date).toTimeString().split(' ')[0].substring(0, 5),
+              reason: transfer.reason,
+              status: transfer.status.toLowerCase(),
+              transferredBy: transfer.transferred_by,
+            });
+          }
+        }
+      }
+
+      // Sort by date descending and apply pagination
+      allTransfers.sort((a, b) => new Date(b.date + ' ' + b.time) - new Date(a.date + ' ' + a.time));
+
+      return allTransfers.slice(offset, offset + limit);
+    } catch (error) {
+      logger.error('Error fetching all transfers:', error);
       throw error;
     }
   }

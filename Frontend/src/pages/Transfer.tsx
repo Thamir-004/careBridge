@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, Loader2, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,27 +14,32 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { transferPatient, fetchPatients, type Patient, useAuthenticatedFetch } from "@/lib/api";
+import { transferPatient, fetchPatients, type Patient, useAuthenticatedFetch, type TransferRequest } from "@/lib/api";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { useHospital } from "@/contexts/HospitalContext";
 
 export default function Transfer() {
+  const { selectedHospital, hospitals } = useHospital();
   const [patientId, setPatientId] = useState("");
-  const [fromHospital, setFromHospital] = useState("City General");
-  const [toHospital, setToHospital] = useState("County Medical");
+  const [fromHospital, setFromHospital] = useState(hospitals[0]?.id || "");
+  const [toHospital, setToHospital] = useState(hospitals[1]?.id || "");
   const [reason, setReason] = useState("");
   const [transferredBy, setTransferredBy] = useState("");
   const [includeHistory, setIncludeHistory] = useState(true);
-  const [loading, setLoading] = useState(false);
   const [searchingPatient, setSearchingPatient] = useState(false);
   const [foundPatient, setFoundPatient] = useState<Patient | null>(null);
 
   const navigate = useNavigate();
   const { toast } = useToast();
   const authenticatedFetch = useAuthenticatedFetch();
+  const queryClient = useQueryClient();
 
   const handleSearchPatient = async () => {
+    const fromHospitalName = hospitals.find(h => h.id === fromHospital)?.name || fromHospital;
+    console.log('handleSearchPatient called with patientId:', patientId, 'fromHospital:', fromHospital);
     if (!patientId.trim()) {
+      console.log('patientId is empty');
       toast({
         title: "Error",
         description: "Please enter a patient ID.",
@@ -44,25 +50,31 @@ export default function Transfer() {
 
     try {
       setSearchingPatient(true);
+      console.log('Fetching patients from', fromHospitalName);
       // Search across hospitals for the patient
-      const patients = await fetchPatients(fromHospital, authenticatedFetch);
+      const patients = await fetchPatients(fromHospitalName, authenticatedFetch);
+      console.log('Fetched patients:', patients.length);
       const patient = patients.find(p => p.id === patientId);
+      console.log('Found patient:', patient);
 
       if (patient) {
         setFoundPatient(patient);
+        console.log('setFoundPatient called');
         toast({
           title: "Patient Found",
           description: `Found ${patient.name} at ${patient.hospital}`,
         });
       } else {
         setFoundPatient(null);
+        console.log('setFoundPatient(null)');
         toast({
           title: "Patient Not Found",
-          description: `No patient with ID ${patientId} found at ${fromHospital}`,
+          description: `No patient with ID ${patientId} found at ${fromHospitalName}`,
           variant: "destructive",
         });
       }
     } catch (err) {
+      console.error('Error searching patient:', err);
       toast({
         title: "Error",
         description: "Failed to search for patient.",
@@ -73,50 +85,16 @@ export default function Transfer() {
     }
   };
 
-  const handleTransfer = async () => {
-    if (!foundPatient) {
-      toast({
-        title: "Error",
-        description: "Please search and select a patient first.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (fromHospital === toHospital) {
-      toast({
-        title: "Error",
-        description: "Source and destination hospitals must be different.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!reason.trim() || !transferredBy.trim()) {
-      toast({
-        title: "Error",
-        description: "Please provide reason and transferred by information.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    try {
-      setLoading(true);
-      const transferData = {
-        patientId: foundPatient.id,
-        fromHospital,
-        toHospital,
-        reason,
-        transferredBy,
-        includeFullHistory: includeHistory,
-      };
-
-      const result = await transferPatient(transferData, authenticatedFetch);
+  const transferMutation = useMutation({
+    mutationFn: (transferData: TransferRequest) => transferPatient(transferData, authenticatedFetch),
+    onSuccess: (data, variables) => {
+      console.log('[DEBUG] Transfer: Mutation succeeded, data:', data);
+      console.log('[DEBUG] Transfer: Invalidating transfers query with key:', ['transfers', 'all', selectedHospital.id]);
+      console.log('[DEBUG] Transfer: Invalidating analytics query with key:', ['analytics']);
 
       toast({
         title: "Success",
-        description: `Patient ${foundPatient.name} has been transferred successfully.`,
+        description: `Patient ${foundPatient?.name} has been transferred successfully.`,
       });
 
       // Reset form
@@ -125,18 +103,23 @@ export default function Transfer() {
       setReason("");
       setTransferredBy("");
 
+      // Invalidate queries
+      queryClient.invalidateQueries({ queryKey: ['transfers', 'all', selectedHospital.id] });
+      queryClient.invalidateQueries({ queryKey: ['analytics'] });
+
+      console.log('[DEBUG] Transfer: Queries invalidated, navigating to /transfers');
+
       // Navigate to transfers page to see the transfer
       navigate("/transfers");
-    } catch (err) {
+    },
+    onError: (error) => {
       toast({
         title: "Transfer Failed",
-        description: err instanceof Error ? err.message : "Failed to transfer patient.",
+        description: error instanceof Error ? error.message : "Failed to transfer patient.",
         variant: "destructive",
       });
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+  });
 
   return (
     <div className="space-y-6">
@@ -159,8 +142,9 @@ export default function Transfer() {
                   <SelectValue placeholder="Select source hospital" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="City General">City General</SelectItem>
-                  <SelectItem value="County Medical">County Medical</SelectItem>
+                  {hospitals.map(hospital => (
+                    <SelectItem key={hospital.id} value={hospital.id}>{hospital.name}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -218,8 +202,9 @@ export default function Transfer() {
                   <SelectValue placeholder="Select destination hospital" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="City General">City General</SelectItem>
-                  <SelectItem value="County Medical">County Medical</SelectItem>
+                  {hospitals.map(hospital => (
+                    <SelectItem key={hospital.id} value={hospital.id}>{hospital.name}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -257,11 +242,49 @@ export default function Transfer() {
             </div>
 
             <Button
-              onClick={handleTransfer}
-              disabled={loading || !foundPatient}
+              onClick={() => {
+                if (!foundPatient) {
+                  toast({
+                    title: "Error",
+                    description: "Please search and select a patient first.",
+                    variant: "destructive",
+                  });
+                  return;
+                }
+
+                if (fromHospital === toHospital) {
+                  toast({
+                    title: "Error",
+                    description: "Source and destination hospitals must be different.",
+                    variant: "destructive",
+                  });
+                  return;
+                }
+
+                if (!reason.trim() || !transferredBy.trim()) {
+                  toast({
+                    title: "Error",
+                    description: "Please provide reason and transferred by information.",
+                    variant: "destructive",
+                  });
+                  return;
+                }
+
+                const transferData = {
+                  patientId: foundPatient.id,
+                  fromHospital,
+                  toHospital,
+                  reason,
+                  transferredBy,
+                  includeFullHistory: includeHistory,
+                };
+
+                transferMutation.mutate(transferData);
+              }}
+              disabled={transferMutation.isPending || !foundPatient}
               className="w-full"
             >
-              {loading ? (
+              {transferMutation.isPending ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Processing Transfer...
@@ -290,9 +313,9 @@ export default function Transfer() {
                 <p className="text-sm text-muted-foreground">Patient ID: {foundPatient.id}</p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm">{fromHospital}</span>
+                <span className="text-sm">{hospitals.find(h => h.id === fromHospital)?.name || fromHospital}</span>
                 <ArrowRight className="h-4 w-4" />
-                <span className="text-sm">{toHospital}</span>
+                <span className="text-sm">{hospitals.find(h => h.id === toHospital)?.name || toHospital}</span>
               </div>
             </div>
           </CardContent>

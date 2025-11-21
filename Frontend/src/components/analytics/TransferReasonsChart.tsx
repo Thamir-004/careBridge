@@ -1,16 +1,15 @@
+import { useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = [
-  { reason: "Specialist Care", count: 142 },
-  { reason: "Emergency", count: 98 },
-  { reason: "Better Facilities", count: 67 },
-  { reason: "Patient Request", count: 45 },
-  { reason: "Insurance Coverage", count: 32 },
-  { reason: "Geographic Proximity", count: 28 },
-  { reason: "Other", count: 18 },
-];
+interface TransferReasonsChartProps {
+  data: any[];
+}
 
-export const TransferReasonsChart = () => {
+export const TransferReasonsChart = ({ data }: TransferReasonsChartProps) => {
+  useEffect(() => {
+    console.log('[DEBUG] TransferReasonsChart: Re-rendering with data length:', data?.length || 0);
+  });
+
   return (
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">

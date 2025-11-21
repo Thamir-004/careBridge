@@ -8,7 +8,7 @@ const getNurseModel = require('../hospitals/HospitalB/models/Nurse');
 const getEncounterModel = require('../hospitals/HospitalB/models/Encounter');
 const getMedicationModel = require('../hospitals/HospitalB/models/Medication');
 
-const HOSPITAL_B_URI = process.env.HOSPITAL_B_MONGO_URI || 'mongodb://localhost:27017/hospital_b';
+const HOSPITAL_B_URI = process.env.HOSPITAL_B_MONGO_URI;
 const HOSPITAL_B_ID = process.env.HOSPITAL_B_ID || 'HOSP_B_001';
 const HOSPITAL_B_NAME = process.env.HOSPITAL_B_NAME || 'Metro Medical Center';
 
@@ -22,9 +22,10 @@ function randomDate(start, end) {
 }
 
 function generatePhoneNumber() {
-  const prefixes = ['0700', '0701', '0702', '0703', '0704', '0705', '0706', '0707', '0708', '0709', '0710', '0711', '0712', '0713', '0714', '0715', '0716', '0717', '0718', '0719', '0720', '0721', '0722', '0723', '0724', '0725', '0726', '0727', '0728', '0729', '0730', '0731', '0732', '0733', '0734', '0735', '0736', '0737', '0738', '0739'];
+  // Valid Kenyan prefixes: 071, 072, 073, 074, 075, 076, 077, 078, 079
+  const prefixes = ['071', '072', '073', '074', '075', '076', '077', '078', '079'];
   const prefix = randomChoice(prefixes);
-  const number = Math.floor(Math.random() * 10000000).toString().padStart(7, '0');
+  const number = Math.floor(Math.random() * 10000000).toString().padStart(7, '0'); // Exactly 7 digits
   return `${prefix}${number}`;
 }
 

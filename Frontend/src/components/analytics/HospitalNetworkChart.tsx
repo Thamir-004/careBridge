@@ -1,22 +1,10 @@
 import { Sankey, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = {
-  nodes: [
-    { name: "City General" },
-    { name: "County Medical" },
-    { name: "Regional Health" },
-  ],
-  links: [
-    { source: 0, target: 1, value: 45 },
-    { source: 0, target: 2, value: 32 },
-    { source: 1, target: 0, value: 38 },
-    { source: 1, target: 2, value: 28 },
-    { source: 2, target: 0, value: 25 },
-    { source: 2, target: 1, value: 22 },
-  ],
-};
+interface HospitalNetworkChartProps {
+  data: any;
+}
 
-export const HospitalNetworkChart = () => {
+export const HospitalNetworkChart = ({ data }: HospitalNetworkChartProps) => {
   return (
     <div className="h-96 w-full">
       <ResponsiveContainer width="100%" height="100%">

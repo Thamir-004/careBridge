@@ -1,12 +1,15 @@
+import { useEffect } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
-const data = [
-  { name: "City General Hospital", value: 1234, color: "hsl(var(--stat-blue))" },
-  { name: "County Medical Center", value: 890, color: "hsl(var(--stat-green))" },
-  { name: "Regional Health Facility", value: 567, color: "hsl(var(--stat-purple))" },
-];
+interface PatientDistributionChartProps {
+  data: any[];
+}
 
-export const PatientDistributionChart = () => {
+export const PatientDistributionChart = ({ data }: PatientDistributionChartProps) => {
+  useEffect(() => {
+    console.log('[DEBUG] PatientDistributionChart: Re-rendering with data length:', data?.length || 0);
+  });
+
   return (
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">

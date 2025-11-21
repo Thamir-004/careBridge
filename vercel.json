@@ -1,0 +1,9 @@
+{
+  "root": "Frontend",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -6,9 +6,9 @@ console.log('==========================================\n');
 
 // Scripts to run in order
 const scripts = [
-  { name: 'Hospital A Data', file: 'backend/seed/populateHospitalA.js' },
-  { name: 'Hospital B Data', file: 'backend/seed/populateHospitalB.js' },
-  { name: 'Patient Transfers', file: 'backend/seed/populateTransfers.js' }
+  { name: 'Hospital A Data', file: 'seed/populateHospitalA.js' },
+  { name: 'Hospital B Data', file: 'seed/populateHospitalB.js' },
+  { name: 'Patient Transfers', file: 'seed/populateTransfers.js' }
 ];
 
 function runScript(scriptPath) {

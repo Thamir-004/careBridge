@@ -76,6 +76,8 @@ export default function Patients() {
   }, [toast]);
 
   const handleTransfer = (patientId: string) => {
+    console.log('handleTransfer called with patientId:', patientId);
+    console.log('Navigating to /transfer');
     navigate("/transfer");
   };
 
